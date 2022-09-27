@@ -14,7 +14,7 @@ class FirstController: BaseViewController {
     private var upperBoundTextField = UITextField(frame: .zero)
     private var doneButton = UIButton(type: .system)
     
-    private var viewModel: CommentViewModel!
+    private var viewModel: CommentViewModel! // Я стараюсь избегать форсов, инициальзацию viewModel я бы вынес в init. В свою очередь отдельная фабрика бы собирал экран и подгатавливала voewModel
     
     // MARK: -
     override func viewDidLoad() {
