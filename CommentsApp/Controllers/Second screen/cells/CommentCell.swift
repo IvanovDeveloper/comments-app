@@ -44,6 +44,16 @@ class CommentCell: UITableViewCell {
         emailLabel.font = UIFont.systemFont(ofSize: 11, weight: .regular)
     }
     
+    /* Используя доменную модель Comment создается лишняя зависимость которая затрудняет переиспользовать целу. Тут я бы посоветовал чтобы у целы была своя внутрення Model по которой собирается юай
+    Вроде
+    struct Data {
+        let id: String?
+        let body: String?
+        let email: String?
+    }
+    
+    В таблице где происходит обращение к целе сделать конвертацию Comment->CommentCell.Data
+    */
     func update(with comment: Comment) {
         bodyLabel.text = "[\(comment.id)] -- \(comment.body)"
         emailLabel.text = comment.email
